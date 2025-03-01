@@ -1,0 +1,2 @@
+1. Work on signing the assembly.
+2. Work on GC generations.
