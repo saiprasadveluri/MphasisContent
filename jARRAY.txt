@@ -1,0 +1,47 @@
+using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ArrayDemo2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Student Count:");
+            int StCount = int.Parse(Console.ReadLine());
+            int[][] Temp= new int[StCount][];
+
+            for (int row = 0; row < StCount; row++)
+            {
+                Console.WriteLine("Enter Subject Count:");
+                int Count = int.Parse(Console.ReadLine());
+                Temp[row]= new int[Count];
+                for(int k=0;k<Count; k++)
+                {
+                    Console.WriteLine("Enter Subject Mark");
+                    int m=int.Parse(Console.ReadLine());
+                    Temp[row][k] = m;
+                }
+            }      
+
+            //int[,] Temp = new int[StCount,Count];
+            for(int j=0;j< StCount;++j)
+            {
+                Console.WriteLine("Marks Of Student:");
+                for (int i = 0; i < Temp[j].Length; ++i)
+                {
+                    Console.WriteLine("Mark:");                    
+                    Console.WriteLine(Temp[j][i]);
+                }
+            }
+            
+
+           
+            
+        }
+    }
+}

@@ -1,0 +1,43 @@
+using System;
+using System.Linq;
+
+
+namespace ArrayDemo2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int FamCount=int.Parse(Console.ReadLine());
+            int[][] Ratings=new int[FamCount][];
+            for (int i = 0; i < FamCount; i++)
+            {
+                Console.WriteLine("Enter Memebr Count:");
+                int memCount=int.Parse(Console.ReadLine());
+                Ratings[i]=new int[memCount];
+                //Take Rating of each Member
+                for(int j=0;j< memCount;++j)
+                {
+                    Console.WriteLine("Eneter Rating:");
+                    Ratings[i][j]=int.Parse(Console.ReadLine());
+                }
+            }
+
+            //Logic
+            int TotalRating = 0;
+            int TotalMembers = 0;
+            for (int i = 0; i < FamCount; i++)
+            {
+                int FamRating = 0;
+                TotalMembers += Ratings[i].Length;
+                for (int j = 0; j < Ratings[i].Length; ++j)
+                {
+                    FamRating += Ratings[i][j];                     
+                }
+                Console.WriteLine("Family Average: " + (double)FamRating / Ratings[i].Length);
+                TotalRating += FamRating;
+            }
+            Console.WriteLine("Community Rating: " + (double)TotalRating / TotalMembers);
+        }
+    }
+}

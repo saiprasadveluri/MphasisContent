@@ -1,0 +1,25 @@
+ string inp=Console.ReadLine();
+ string[] strArr = inp.Split(' ');
+ int NumberCount=strArr.Length;
+ int[] numArr= new int[NumberCount];
+ for(int i=0; i<NumberCount; i++)
+ {
+     numArr[i]=int.Parse(strArr[i]);                
+ }
+int[] Res= numArr.Distinct().ToArray();//LINQ
+ for(int i=0;i<Res.Length;i++) 
+ {
+     int num= Res[i];
+     int nCount = 0;
+     for(int j=0;j< numArr.Length;++j)
+     {                   
+         if(numArr[j]== num)
+         {
+             ++nCount;                        
+         }
+     }
+     if(nCount>1)
+     {
+         Console.WriteLine(Res[i]);
+     }
+ }
